@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # apps
     'api',
     'api.category',
+    'api.product',
     # extra
     'corsheaders',
     'rest_framework',
