@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'api',
     'api.category',
     'api.product',
+    'api.user',
     # extra
     'corsheaders',
     'rest_framework',
@@ -134,6 +135,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
+
+AUTH_USER_MODEL = 'user.CustomUser'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
