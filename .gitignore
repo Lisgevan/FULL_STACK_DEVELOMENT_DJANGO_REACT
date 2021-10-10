@@ -534,5 +534,12 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/django,react,reactnative,python
 
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Custom
 00 TEMP/
