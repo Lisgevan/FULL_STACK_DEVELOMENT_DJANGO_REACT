@@ -13,5 +13,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
 
   class Meta:
     model = Product
-    fileds = ('url', 'id', 'name', 'description', 'price', 'image', 'category')
-    exclude = ('stock', 'is_active', 'created_at', 'updated_at')
+    # fileds = ('url', 'id', 'name', 'description', 'price', 'image', 'category')
+    # exclude = ('stock', 'is_active', 'created_at', 'updated_at')
+    fields = [field.name for field in model._meta.fields]
+    fields.extend(['id', 'url'])
