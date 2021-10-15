@@ -23,17 +23,29 @@ export const signin = user => {
 		formData.append(name, user[name]);
 	}
 
+	// the above for loop can be replaced by this:
+
+	// const { email, password } = user;
+	// formData.append("email", email);
+	// formData.append("password", password);
+
+	for (var key of formData.keys()) {
+		console.log("MYKEY:", key);
+	}
+	//up to here.
+
 	return fetch(`${API}user/login/`, {
 		method: "POST",
-		body: JSON.stringify(user),
+		body: formData,
 	})
 		.then(response => {
+			console.log("SUCCESS", response);
 			return response.json();
 		})
 		.catch(err => console.log(err));
 };
 
-export const athenticate = (data, next) => {
+export const authenticate = (data, next) => {
 	if (typeof window !== undefined) {
 		localStorage.setItem("jwt", JSON.stringify(data));
 		next();
@@ -41,17 +53,18 @@ export const athenticate = (data, next) => {
 };
 
 export const isAuthenticated = () => {
-	if (typeof window == undefined) {
+	if (typeof window === undefined) {
 		return false;
 	}
 	if (localStorage.getItem("jwt")) {
 		return JSON.parse(localStorage.getItem("jwt"));
+		//TODO: compare JWT with database json token
 	} else {
 		return false;
 	}
 };
 
-export const signout = nest => {
+export const signout = next => {
 	const userId = isAuthenticated() && isAuthenticated().user.id;
 
 	if (typeof window !== undefined) {

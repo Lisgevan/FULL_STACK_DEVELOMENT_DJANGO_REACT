@@ -23,7 +23,7 @@ def signin(request):
   username = request.POST['email'] 
   password = request.POST['password'] 
 
-# validation part
+  # validation part
   if not re.match("^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$", username):
     return JsonResponse({'error': 'Enter a valid email'})
 

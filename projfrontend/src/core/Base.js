@@ -15,7 +15,7 @@ const Base = ({ title = "MyTitle", description = "My Description", className = "
 					<h4>If you got any questions, reach me out at Instagram</h4>
 					<button className="btn btn-warning btn-lg">Contact Us</button>
 					<div className="container">
-						<span className="text-muted">An Amazing Django React fullstack course</span>
+						<span className="text-warning">An Amazing Django React fullstack course</span>
 					</div>
 				</div>
 			</footer>

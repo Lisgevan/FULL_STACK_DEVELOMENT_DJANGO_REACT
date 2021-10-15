@@ -28,5 +28,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = CustomUser
     extra_kwargs = {'password': {'write_only': True}}
-    fileds = ('name', 'email', 'password', 'phone', 'gender', 'is_active', 'is_staff', 'is_superuser')
-    exclude = ()
+    # fileds = ('name', 'email', 'password', 'phone', 'gender', 'is_active', 'is_staff', 'is_superuser')
+    # exclude = ()
+    fields = [field.name for field in model._meta.fields]
+    fields.extend(['id', 'url'])
