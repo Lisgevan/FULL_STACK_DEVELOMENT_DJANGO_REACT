@@ -72,7 +72,7 @@ export const signout = next => {
 		cartEmpty(() => {});
 		// next()
 
-		return fetch(`${API}uer/logout/${userId}`, {
+		return fetch(`${API}user/logout/${userId}`, {
 			method: "GET",
 		})
 			.then(response => {
