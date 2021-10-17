@@ -23,6 +23,7 @@ const Card = ({
 			addItemToCart(product, () => setRedirect(true));
 			console.log("Added to cart");
 		} else {
+			//TODO: set a redirect to signin page
 			console.log("Login Please!");
 		}
 	};

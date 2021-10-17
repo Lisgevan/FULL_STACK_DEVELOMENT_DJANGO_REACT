@@ -14,7 +14,7 @@ const currentTab = (history, path) => {
 const Menu = ({ history, path }) => {
 	return (
 		<div>
-			<ul className="nav nav tabs bg-dark">
+			<ul className="nav nav tabs bg-dark fixed-top">
 				<li className="nav-item">
 					<Link className="nav-link" to="/" style={currentTab(history, "/")}>
 						Home
@@ -54,7 +54,7 @@ const Menu = ({ history, path }) => {
 				)}
 				{isAuthenticated() && (
 					<li className="nav-item">
-						<spam
+						<span
 							onClick={() => {
 								signout(() => {
 									history.push("/");
@@ -62,7 +62,7 @@ const Menu = ({ history, path }) => {
 							}}
 							className="nav-link text-warning">
 							Signout
-						</spam>
+						</span>
 					</li>
 				)}
 			</ul>
